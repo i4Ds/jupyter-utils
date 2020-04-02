@@ -20,7 +20,7 @@ kernel-this -n myenv-kernel
 ```
 Here we named the kernel `myenv-kernel`. The script should print
 ```bash
-Kernel 'myenv-kernel' created successfully in '/users/sarafael/.local/share/jupyter/kernels/myenv-kernel'
+Kernel 'myenv-kernel' created successfully in '~/.local/share/jupyter/kernels/myenv-kernel'
 ```
 In case it's not possible to activate an environment. The `kernel_create.py` will create a kernel from a python executable provided through the environment variable `$TARGET_PYTHON_EXE`:
 ```bash
