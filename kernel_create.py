@@ -46,7 +46,7 @@ class PythonEnv():
             if d in sys.version.lower():
                 return d
 
-        return 'system'
+        return 'unknown'
 
 
 class PythonJupyterKernel():
@@ -80,7 +80,7 @@ class PythonJupyterKernel():
         #!/usr/bin/env bash
         {kernel_env}
         {activate}
-        python -m ipykernel_launcher $@
+        {python_exe} -m ipykernel_launcher $@
         '''
         return cleandoc(_launcher.format(**self.format_dict))
 
@@ -101,7 +101,8 @@ class PythonJupyterKernel():
             'kernel_dir': self.dir,
             'activate': ('source %s' % self.activate_script
                          if self.activate_script else ''),
-            'kernel_env': self.kernel_env
+            'kernel_env': self.kernel_env,
+            'python_exe': sys.executable,
         }
 
         return _format_dict
