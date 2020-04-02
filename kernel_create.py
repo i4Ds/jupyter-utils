@@ -5,10 +5,6 @@
 test -z $TARGET_PYTHON_EXE && TARGET_PYTHON_EXE=python 
 exec $TARGET_PYTHON_EXE $0 "$@"
 
-echo $TARGET_PYTHON_EXE not found
-
-exit 2
-
 ":"""
 
 
