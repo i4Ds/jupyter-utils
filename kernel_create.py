@@ -142,7 +142,7 @@ class PythonJupyterKernel():
         for n, s in zip(filenames, file_strings):
             abs_path = os.path.join(self.dir, n)
             with open(abs_path, 'w') as f:
-                print(cleandoc(s), file=f)
+                print(s, file=f)
 
             # make the launcher file executable
             if 'launcher' in n:
