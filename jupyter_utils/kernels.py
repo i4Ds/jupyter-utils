@@ -1,13 +1,3 @@
-#!/bin/sh
-
-""":"
-
-test -z $TARGET_PYTHON_EXE && TARGET_PYTHON_EXE=python 
-exec $TARGET_PYTHON_EXE $0 "$@"
-
-":"""
-
-
 import os
 import sys
 import pathlib
@@ -162,14 +152,17 @@ class PythonJupyterKernel():
               "'{kernel_dir}'".format(**self.format_dict))
 
 
-parser = argparse.ArgumentParser(description='Creates jupyter kernel for the '
-                                             'current python executable.')
-parser.add_argument('-n', dest='kernel_name', help='set name of the kernel',
-                    required=True)
-parser.add_argument('-f', dest='overwrite',
-                    help='overwrite if kernel folder exists',
-                    action='store_true')
-args = parser.parse_args()
+def main():
+    parser = argparse.ArgumentParser(
+        description='Creates jupyter kernel for the '
+                    'current python executable.')
+    parser.add_argument('-n', dest='kernel_name',
+                        help='set name of the kernel',
+                        required=True)
+    parser.add_argument('-f', dest='overwrite',
+                        help='overwrite if kernel folder exists',
+                        action='store_true')
+    args = parser.parse_args()
 
-kernel = PythonJupyterKernel(args.kernel_name)
-kernel.write(args.overwrite)
+    kernel = PythonJupyterKernel(args.kernel_name)
+    kernel.write(args.overwrite)
