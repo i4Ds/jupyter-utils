@@ -126,7 +126,6 @@ class PythonJupyterKernel():
             source $HOME/.jupyterhub.env
         fi
         '''
-
         return kernel_env
 
     def has_ipykernel(self):
