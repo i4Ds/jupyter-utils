@@ -120,11 +120,12 @@ class PythonJupyterKernel():
 
     @property
     def kernel_env(self):
-        if self.env.uses_system_site_packages():
-            kernel_env = 'source $HOME/.jupyterhub.env'
-        else:
-            kernel_env = "export PYTHONPATH=''"
-
+        kernel_env = '''
+        export PYTHONPATH=''
+        if [ "$SOURCE_JUPYTERHUBENV" == true ]; then
+            source $HOME/.jupyterhub.env
+        fi
+        '''
         return kernel_env
 
     def has_ipykernel(self):
