@@ -27,5 +27,5 @@ Giving a look to the directory `~/.local/share/jupyter/kernels/myenv-kernel`, we
 
 In case it's not possible to activate the virtual environment, the variable `$TARGET_PYTHON_EXE` can be used to specify the python executable to be used by the kernel:
 ```bash
-TARGET_PYTHON_EXE=/path/to/my/bin/python kernel-this -n mykernel
+TARGET_PYTHON_EXE=/path/to/my/bin/python kernel-create -n mykernel
 ```
