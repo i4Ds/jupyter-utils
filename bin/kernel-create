@@ -2,7 +2,7 @@
 
 """:"
 
-test -z $TARGET_PYTHON_EXE && TARGET_PYTHON_EXE=python 
+test -z $TARGET_PYTHON_EXE && TARGET_PYTHON_EXE=python3
 exec $TARGET_PYTHON_EXE $0 "$@"
 
 ":"""
