@@ -12,8 +12,6 @@ authors = [
 license-files = ["LICENSE"]
 readme = "README.md"
 
-#dependencies = []
-
 # Valid classifiers: https://pypi.org/classifiers/
 classifiers = [
     "Development Status :: 4 - Beta",
