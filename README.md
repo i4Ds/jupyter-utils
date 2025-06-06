@@ -2,11 +2,10 @@
 
 ## `kernel-create`
 
-`kernel_create.py` creates a jupyter kernel in `$HOME/.local/share/jupyter/kernels` from the python environment that's active on the environment. The newly-created kernel will be automatically available on the notebooks launched from [http://jupyter.cscs.ch](http://jupyter.cscs.ch).
+`kernel_create.py` creates a jupyter kernel in `$HOME/.local/share/jupyter/kernels` from the python environment that's active on the environment. The newly-created kernel will be automatically available on the notebooks launched on the FHNW Cluster ([cs.technik.fhnw.ch/jupyhub](cs.technik.fhnw.ch/jupyhub)).
 
 For instance, let's say we want to create a virtual environment and make a jupyter kernel based on it. We first create the virtual environment
 ```bash
-module load cray-python/3.6.5.7
 python -m venv myenv
 ```
 For a virtual environment to be used as jupyter kernel, it has to have the `ipykernel` package installed. It can be installed with `pip`, only first the environment has to be activated
